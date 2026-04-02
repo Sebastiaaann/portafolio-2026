@@ -6,12 +6,26 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-export default function CVDrawer() {
+interface CVDrawerProps {
+  compact?: boolean;
+}
+
+export default function CVDrawer({ compact = false }: CVDrawerProps) {
   return (
     <Drawer shouldScaleBackground={true}>
       <DrawerTrigger asChild>
-        <Button variant="outline" className="rounded-full px-6 font-medium border-zinc-200 transition-colors transition-transform hover:bg-zinc-100 active:scale-[0.96] will-change-transform">
-          Ver CV Completo
+        <Button
+          variant="outline"
+          className={`rounded-full border-zinc-200 font-medium transition-colors transition-transform hover:bg-zinc-100 active:scale-[0.96] will-change-transform ${compact ? "px-4 text-[15px] sm:px-6 sm:text-sm" : "px-6"}`}
+        >
+          {compact ? (
+            <>
+              <span className="sm:hidden">Ver CV</span>
+              <span className="hidden sm:inline">Ver CV Completo</span>
+            </>
+          ) : (
+            "Ver CV Completo"
+          )}
         </Button>
       </DrawerTrigger>
       <DrawerContent className="bg-transparent border-none shadow-none outline-none [&>div:first-child]:hidden">
