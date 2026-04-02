@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { projectsData } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projectsData.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={`${project.title} | Caso de Estudio`}>
+  <article class="w-full bg-[#fafafa] font-sans text-zinc-900 pb-32 selection:bg-zinc-900 selection:text-white">
+    {/* Dynamic Background Texture */}
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+    {/* Header */}
+    <header class="relative z-10 w-full max-w-4xl mx-auto px-6 py-24 md:py-32 lg:px-8 text-center flex flex-col items-center">
+      <div class="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <span class="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-zinc-400 border border-zinc-200/60 bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+          {project.category}
+        </span>
+      </div>
+      
+      <h1 
+        class="font-serif text-5xl md:text-8xl font-medium tracking-tight mb-8 text-balance leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150"
+        style={`view-transition-name: project-title-${project.slug}`}
+      >
+        {project.title}
+      </h1>
+      
+      <p class="font-sans text-lg md:text-xl text-zinc-500/90 text-pretty leading-relaxed max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
+        {project.caseStudy?.intro || project.description}
+      </p>
+
+      {project.techStack && (
+        <div class="mt-12 flex flex-wrap justify-center gap-2 animate-in fade-in duration-1000 delay-500">
+          {project.techStack.map((tech, i) => (
+            <span 
+              class="bg-white border border-zinc-200/50 text-zinc-500 font-mono text-[11px] px-3 py-1 rounded-md shadow-[0_1px_1px_rgba(0,0,0,0.02)] transition-transform hover:scale-105"
+              style={`animation-delay: ${600 + (i * 100)}ms`}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-700">
+        {project.link && (
+          <a 
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative bg-zinc-900 text-white font-sans text-[13px] tracking-wide font-medium px-8 py-4 rounded-full overflow-hidden transition-all active:scale-[0.96] shadow-[0_10px_20px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_25px_-10px_rgba(0,0,0,0.4)]"
+          >
+            <span class="relative z-10">Visitar Proyecto</span>
+            <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </a>
+        )}
+        {project.github && (
+          <a 
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-2 text-zinc-400 hover:text-zinc-900 font-sans text-[13px] tracking-wide font-medium transition-all"
+          >
+            <span>Código Fuente</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        )}
+      </div>
+    </header>
+
+    {/* Hero Image / Presentation */}
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 lg:px-8 mb-32 md:mb-48 group">
+      <div class="relative w-full aspect-[16/10] md:aspect-[16/9] rounded-[40px] overflow-hidden bg-zinc-100 border border-zinc-200/60 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-transform duration-1000 ease-out group-hover:scale-[1.01]">
+        <img 
+          src={project.image} 
+          alt={`Portada de ${project.title}`}
+          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          style={`view-transition-name: project-image-${project.slug}`}
+        />
+        {/* Glass Overlay Effect */}
+        <div class="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/20 rounded-[40px]" />
+      </div>
+    </div>
+
+    {/* Breakdown / Case Study sections */}
+    {project.caseStudy?.sections && project.caseStudy.sections.length > 0 && (
+      <div class="relative z-10 w-full flex flex-col gap-32 md:gap-56">
+        {project.caseStudy.sections.map((section, index) => (
+          <section class={`w-full flex flex-col ${index % 2 === 0 ? 'items-start' : 'items-end'}`}>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+              <div class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 md:gap-24 items-center`}>
+                
+                {/* Content Side */}
+                <div class="w-full md:w-[40%] flex flex-col gap-6">
+                  <div class="w-8 h-[1px] bg-zinc-300" />
+                  {section.title && (
+                    <h2 class="font-serif text-3xl md:text-5xl font-medium text-zinc-900 leading-[1.1] tracking-tight text-balance">
+                      {section.title}
+                    </h2>
+                  )}
+                  {section.description && (
+                    <p class="font-sans text-lg text-zinc-500/90 leading-relaxed text-pretty">
+                      {section.description}
+                    </p>
+                  )}
+                </div>
+
+                {/* Image Side */}
+                {(section.image || section.images) && (
+                  <div class="w-full md:w-[60%]">
+                    <div class="relative">
+                      {section.image ? (
+                        <div class="rounded-3xl overflow-hidden bg-white shadow-sm border border-zinc-200/50">
+                          <img 
+                            src={section.image} 
+                            alt={`Captura de ${section.title || project.title}`}
+                            class="w-full h-auto object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : section.images ? (
+                        <div class="rounded-[2rem] overflow-hidden shadow-sm border border-zinc-200/50 p-4 sm:p-8 flex flex-col gap-6 md:gap-8 bg-zinc-50/50">
+                          {section.images.map((img, i) => (
+                            <img 
+                              src={img} 
+                              alt={`Captura de componente de ${project.title} ${i + 1}`}
+                              class="w-full h-auto object-cover rounded-xl shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] border border-zinc-200/40 bg-white"
+                              loading="lazy"
+                            />
+                          ))}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
+    )}
+
+    {/* Return Home */}
+    <div class="relative z-10 w-full max-w-3xl mx-auto px-6 lg:px-8 mt-48 text-center">
+      <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent mb-16" />
+      <a 
+        href="/#proyectos" 
+        class="group inline-flex flex-col items-center gap-4 active:scale-[0.96] transition-transform"
+      >
+        <div class="w-12 h-12 rounded-full border border-zinc-200 flex items-center justify-center group-hover:bg-zinc-900 group-hover:border-zinc-900 transition-all duration-300">
+          <svg class="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </div>
+        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-400 group-hover:text-zinc-900 transition-colors">
+          Volver al Inicio
+        </span>
+      </a>
+    </div>
+  </article>
+</Layout>

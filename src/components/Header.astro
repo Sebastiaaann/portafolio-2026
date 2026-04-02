@@ -1,0 +1,32 @@
+---
+import CVDrawer from "./react/CVDrawer.tsx";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header transition:persist class="w-full h-[72px] px-6 lg:px-[100px] flex justify-between items-center sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#F3F5FA] shadow-[0_2px_3px_rgba(20,27,41,0.02)] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,Helvetica,Arial,sans-serif] antialiased">
+  <div class="flex flex-col justify-center">
+    <a href="/" class="flex items-center text-[#878890] text-[20px] leading-[24px] tracking-[-0.2px] hover:text-[#101012] transition-colors group">
+      <span>Sebastian.Almonacid</span>
+    </a>
+  </div>
+  
+  <nav class="flex items-center gap-2 sm:gap-6 md:gap-8">
+    <a 
+      href="/" 
+      class={`relative before:absolute before:-inset-2 before:content-[''] inline-block text-[16px] sm:text-[18px] leading-[21.6px] tracking-[-0.2px] transition-all active:scale-[0.96] px-3 py-2 rounded-md ${currentPath === '/' || currentPath === '' ? 'text-[#101012] bg-zinc-100 font-medium' : 'text-[#878890] hover:text-[#101012] hover:bg-zinc-50'}`}
+    >
+      Inicio
+    </a>
+    <a 
+      href="/proyectos" 
+      class={`relative before:absolute before:-inset-2 before:content-[''] inline-block text-[16px] sm:text-[18px] leading-[21.6px] tracking-[-0.2px] transition-all active:scale-[0.96] px-3 py-2 rounded-md ${currentPath === '/proyectos' || currentPath === '/proyectos/' ? 'text-[#101012] bg-zinc-100 font-medium' : 'text-[#878890] hover:text-[#101012] hover:bg-zinc-50'}`}
+    >
+      Proyectos
+    </a>
+    
+    <div class="ml-2 sm:ml-0">
+      <CVDrawer client:idle />
+    </div>
+  </nav>
+</header>
