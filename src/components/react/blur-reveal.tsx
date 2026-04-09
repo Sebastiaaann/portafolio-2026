@@ -22,7 +22,7 @@ export function BlurReveal({
   blur = "10px",
 }: BlurRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
 
   const defaultVariants: Variants = {
     hidden: { opacity: 0, y: yOffset, filter: `blur(${blur})` },

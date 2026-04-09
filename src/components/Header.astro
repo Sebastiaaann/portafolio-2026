@@ -42,6 +42,7 @@ import CVDrawer from "./react/CVDrawer.tsx";
     
     links.forEach(link => {
       const href = link.getAttribute('href');
+      if (!href) return;
       const isActive = href === '/' 
         ? currentPath === '/' || currentPath === '' 
         : currentPath.startsWith(href);

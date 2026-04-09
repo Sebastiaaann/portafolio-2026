@@ -1,6 +1,7 @@
 ---
 import { Github, Linkedin } from 'lucide-react';
 import CopyEmailButton from './react/CopyEmailButton';
+import { BlurReveal } from './react/blur-reveal';
 ---
 
 <section class="section slide section-1" id="hero-section">
@@ -10,7 +11,7 @@ import CopyEmailButton from './react/CopyEmailButton';
       <div class="max-w-3xl mx-auto px-6 pb-24 relative flex flex-col items-center antialiased text-center w-full">
         
         {/* Heading & Avatar */}
-        <div class="mt-6 mb-8 flex w-full max-w-[520px] flex-col items-center text-center">
+        <BlurReveal client:load delay={0} duration={0.8} yOffset={20} className="mt-6 mb-8 flex w-full max-w-[520px] flex-col items-center text-center">
           {/* Avatar */}
           <div class="h-28 w-28 rounded-full overflow-hidden border border-zinc-200 shadow-sm ring-1 ring-black/5 ring-inset mb-6" transition:name="avatar">
             <img src="/png.jpeg" alt="Sebastian Almonacid" class="w-full h-full object-cover object-[center_60%]" />
@@ -24,10 +25,11 @@ import CopyEmailButton from './react/CopyEmailButton';
               Frontend Developer
             </p>
           </div>
-        </div>
+        </BlurReveal>
 
         <div class="flex w-full flex-col items-center gap-6">
-          {/* Paper Style Bio Block */}
+          <BlurReveal client:load delay={0.15} duration={0.8} yOffset={20} className="w-full flex flex-col items-center">
+            {/* Paper Style Bio Block */}
             <div class="mt-6 mx-auto flex w-full max-w-[520px] flex-col gap-4 text-left">
             {/* Header */}
             <div class="items-center flex gap-1.5 w-full">
@@ -83,7 +85,7 @@ import CopyEmailButton from './react/CopyEmailButton';
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
-          </div>
+          </BlurReveal>
         </div>
       </div>
     </div>
