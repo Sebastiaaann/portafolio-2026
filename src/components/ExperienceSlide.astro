@@ -1,0 +1,44 @@
+---
+import ExperienceItem from './react/ExperienceItem';
+---
+
+<section class="section slide section-2">
+  <div class="section-content w-full h-full flex flex-col items-center justify-center">
+    <div class="section-inner w-full flex flex-col items-center">
+      <div class="w-full max-w-2xl px-6 flex flex-col gap-12 text-left h-full">
+        <div>
+          <h2 class="font-serif text-3xl font-bold text-zinc-900 border-b border-zinc-200 pb-4 mb-8 text-balance">Experiencia</h2>
+          <div class="flex flex-col gap-8">
+            <ExperienceItem
+              client:visible
+              company="AccuHealth"
+              role="Desarrollador Front-End"
+              meta="Práctica Profesional"
+              dates="01.2026 - 04.2026"
+              description="Lideré el desarrollo de la SPA 'MIO-Web' (Vue 3 + TS), logrando un entorno modular para funcionalidades críticas. Implementé arquitecturas de carga asíncrona, caché TTL vía BFF y pruebas automatizadas con Vitest/Playwright, eliminando la pérdida de datos ante desconexiones."
+              tech={['Vue 3', 'TypeScript', 'Vitest', 'Playwright', 'SPA', 'BFF']}
+            />
+            <ExperienceItem
+              client:visible
+              company="NotiChile©"
+              role="Proyecto Full-Stack"
+              meta="Plataforma de Licitaciones"
+              dates="03.2021 - 04.2025"
+              description="Diseñé y desarrollé una plataforma full-stack para monitoreo de licitaciones de ChileCompra. App móvil en React Native + Expo y backend en Node.js + Express + PostgreSQL. Integré notificaciones push segmentadas, worker de ingesta automática y monitoreo."
+              tech={['React Native', 'Node.js', 'PostgreSQL', 'Express', 'TypeScript']}
+            />
+            <ExperienceItem
+              client:visible
+              company="Rodolfo SPA"
+              role="Digitalización de Procesos Operativos"
+              meta="Independiente"
+              dates="Proyecto Independiente"
+              description="Identifiqué ineficiencias en el registro manual de accesos y desarrollé de forma independiente una aplicación digital para el control de visitas. Eliminé el uso de papel, centralicé la información y reduje drásticamente los tiempos de procesamiento."
+              tech={['Desarrollo Web', 'Digitalización', 'UI/UX']}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

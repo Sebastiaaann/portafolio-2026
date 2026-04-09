@@ -1,13 +1,11 @@
 ---
 import CVDrawer from "./react/CVDrawer.tsx";
-
-const currentPath = Astro.url.pathname;
 ---
 
-<header transition:persist class="sticky top-0 z-50 w-full border-b border-[#F3F5FA] bg-white/80 px-4 py-3 shadow-[0_2px_3px_rgba(20,27,41,0.02)] backdrop-blur-md font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,Helvetica,Arial,sans-serif] antialiased sm:h-[72px] sm:px-6 sm:py-0 lg:px-[100px]">
+<header transition:persist="header" class="sticky top-0 z-50 w-full border-b border-[#F3F5FA] bg-white/80 px-4 py-3 shadow-[0_2px_3px_rgba(20,27,41,0.02)] backdrop-blur-md font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,Helvetica,Arial,sans-serif] antialiased sm:h-[72px] sm:px-6 sm:py-0 lg:px-[100px]">
   <div class="mx-auto flex w-full max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
     <div class="min-w-0 flex flex-col justify-center">
-      <a href="/" class="flex min-w-0 items-center text-[#878890] text-[18px] sm:text-[20px] leading-[24px] tracking-[-0.2px] hover:text-[#101012] transition-colors group">
+      <a href="/" data-astro-prefetch class="flex min-w-0 items-center text-[#878890] text-[18px] sm:text-[20px] leading-[24px] tracking-[-0.2px] hover:text-[#101012] transition-colors group">
         <span class="truncate">Sebastian.Almonacid</span>
       </a>
     </div>
@@ -16,21 +14,45 @@ const currentPath = Astro.url.pathname;
       <div class="flex min-w-0 flex-1 items-center gap-2 sm:flex-none sm:gap-6 md:gap-8">
         <a 
           href="/" 
-          class={`relative before:absolute before:-inset-y-2 before:-inset-x-1 sm:before:-inset-2 before:content-[''] inline-flex min-h-10 flex-1 items-center justify-center rounded-md px-2.5 py-2 text-center text-[15px] sm:min-h-0 sm:flex-none sm:px-3 sm:text-[18px] leading-[21.6px] tracking-[-0.2px] transition-colors transition-transform active:scale-[0.96] ${currentPath === '/' || currentPath === '' ? 'text-[#101012] bg-zinc-100 font-medium' : 'text-[#878890] hover:text-[#101012] hover:bg-zinc-50'}`}
+          data-astro-prefetch
+          class="nav-link relative before:absolute before:-inset-y-2 before:-inset-x-1 sm:before:-inset-2 before:content-[''] inline-flex min-h-10 flex-1 items-center justify-center rounded-md px-2.5 py-2 text-center text-[15px] sm:min-h-0 sm:flex-none sm:px-3 sm:text-[18px] leading-[21.6px] tracking-[-0.2px] transition-colors transition-transform active:scale-[0.96]"
         >
           Inicio
         </a>
         <a 
           href="/proyectos" 
-          class={`relative before:absolute before:-inset-y-2 before:-inset-x-1 sm:before:-inset-2 before:content-[''] inline-flex min-h-10 flex-1 items-center justify-center rounded-md px-2.5 py-2 text-center text-[15px] sm:min-h-0 sm:flex-none sm:px-3 sm:text-[18px] leading-[21.6px] tracking-[-0.2px] transition-colors transition-transform active:scale-[0.96] ${currentPath === '/proyectos' || currentPath === '/proyectos/' ? 'text-[#101012] bg-zinc-100 font-medium' : 'text-[#878890] hover:text-[#101012] hover:bg-zinc-50'}`}
+          data-astro-prefetch
+          class="nav-link relative before:absolute before:-inset-y-2 before:-inset-x-1 sm:before:-inset-2 before:content-[''] inline-flex min-h-10 flex-1 items-center justify-center rounded-md px-2.5 py-2 text-center text-[15px] sm:min-h-0 sm:flex-none sm:px-3 sm:text-[18px] leading-[21.6px] tracking-[-0.2px] transition-colors transition-transform active:scale-[0.96]"
         >
           Proyectos
         </a>
       </div>
       
       <div class="shrink-0">
-        <CVDrawer client:idle compact />
+        <CVDrawer client:load compact />
       </div>
     </nav>
   </div>
 </header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.nav-link');
+    
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      const isActive = href === '/' 
+        ? currentPath === '/' || currentPath === '' 
+        : currentPath.startsWith(href);
+        
+      if (isActive) {
+        link.classList.add('text-[#101012]', 'bg-zinc-100', 'font-medium');
+        link.classList.remove('text-[#878890]', 'hover:text-[#101012]', 'hover:bg-zinc-50');
+      } else {
+        link.classList.remove('text-[#101012]', 'bg-zinc-100', 'font-medium');
+        link.classList.add('text-[#878890]', 'hover:text-[#101012]', 'hover:bg-zinc-50');
+      }
+    });
+  });
+</script>

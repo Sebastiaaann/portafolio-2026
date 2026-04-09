@@ -1,0 +1,176 @@
+- generic [active] [ref=e320]:
+  - generic [ref=e321]:
+    - banner [ref=e322]:
+      - generic [ref=e323]:
+        - link "Sebastian.Almonacid" [ref=e325] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e326]: Sebastian.Almonacid
+        - navigation [ref=e327]:
+          - generic [ref=e328]:
+            - link "Inicio" [ref=e329] [cursor=pointer]:
+              - /url: /
+            - link "Proyectos" [ref=e330] [cursor=pointer]:
+              - /url: /proyectos
+          - button "Ver CV Completo" [ref=e333]:
+            - generic [ref=e334]: Ver CV Completo
+    - main [ref=e336]:
+      - link "Volver atrás" [ref=e338] [cursor=pointer]:
+        - /url: /
+        - img [ref=e339]
+        - text: Volver atrás
+      - generic [ref=e342]:
+        - link "MIO WEB MIO WEB 01.2026" [ref=e343] [cursor=pointer]:
+          - /url: /proyectos/mio-web
+          - img "MIO WEB" [ref=e345]
+          - generic [ref=e346]:
+            - heading "MIO WEB" [level=3] [ref=e347]
+            - generic [ref=e348]: "01.2026"
+        - link "Fletes Marcelo Fletes Marcelo 05.2025" [ref=e349] [cursor=pointer]:
+          - /url: https://fletesdonmarcelo.netlify.app/
+          - img "Fletes Marcelo" [ref=e351]
+          - generic [ref=e352]:
+            - heading "Fletes Marcelo" [level=3] [ref=e353]
+            - generic [ref=e354]: "05.2025"
+        - link "Portafolio Web Portafolio Web 10.2025" [ref=e355] [cursor=pointer]:
+          - /url: https://portafolio-taupe-one-74.vercel.app/
+          - img "Portafolio Web" [ref=e357]
+          - generic [ref=e358]:
+            - heading "Portafolio Web" [level=3] [ref=e359]
+            - generic [ref=e360]: "10.2025"
+        - link "AGR E-Commerce AGR E-Commerce 08.2025" [ref=e361] [cursor=pointer]:
+          - /url: https://proyecto-e-commerce-swart.vercel.app/
+          - img "AGR E-Commerce" [ref=e363]
+          - generic [ref=e364]:
+            - heading "AGR E-Commerce" [level=3] [ref=e365]
+            - generic [ref=e366]: "08.2025"
+    - contentinfo [ref=e367]:
+      - generic [ref=e368]:
+        - link "GitHub" [ref=e369] [cursor=pointer]:
+          - /url: https://github.com/Sebastiaaann
+        - link "LinkedIn" [ref=e370] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/sebastian-almonacid-santana-63b980264/
+        - link "Email" [ref=e371] [cursor=pointer]:
+          - /url: mailto:sebastian.almo9@gmail.com
+  - generic [ref=e55]:
+    - button "Menu" [ref=e56]:
+      - img [ref=e58]
+      - generic: Menu
+    - button "Inspect" [ref=e62]:
+      - img [ref=e64]
+      - generic: Inspect
+    - button "Audit" [ref=e66]:
+      - generic [ref=e67]:
+        - img [ref=e68]
+        - img [ref=e372]
+      - generic: Audit
+    - button "Settings" [ref=e74]:
+      - img [ref=e76]
+      - generic: Settings
+  - generic [ref=e374]: Proyectos - Sebastian Almonacid
+  - button "Pause animationsP Layout modeL Hide markersH Copy feedbackC Send AnnotationsS Clear allX Settings ExitEsc v3.0.2 Output Detail Standard React Components Hide Until Restart Marker Color Indigo Blue Cyan Green Yellow Orange Red Clear on copy/send Block page interactions Manage MCP & Webhooks Manage MCP & Webhooks MCP Connection MCP connection allows agents to receive and act on annotations. Learn more Webhooks Auto-Send The webhook URL will receive live annotation changes and annotation data." [ref=e377]:
+    - img [ref=e379]
+    - generic [ref=e382]:
+      - generic [ref=e383]:
+        - button [ref=e384]:
+          - img [ref=e385]
+        - generic [ref=e388]: Pause animationsP
+      - generic [ref=e389]:
+        - button [ref=e390]:
+          - img [ref=e391]
+        - generic [ref=e393]: Layout modeL
+      - generic [ref=e394]:
+        - button [disabled] [ref=e395]:
+          - img [ref=e396]
+        - generic [ref=e403]: Hide markersH
+      - generic [ref=e404]:
+        - button [disabled] [ref=e405]:
+          - img [ref=e406]
+        - generic [ref=e413]: Copy feedbackC
+      - generic [ref=e414]:
+        - button [disabled] [ref=e415]:
+          - img [ref=e416]
+        - generic [ref=e425]: Send AnnotationsS
+      - generic [ref=e426]:
+        - button [disabled] [ref=e427]:
+          - img [ref=e428]
+        - generic [ref=e430]: Clear allX
+      - generic [ref=e431]:
+        - button [ref=e432]:
+          - img [ref=e433]
+        - text: Settings
+      - generic [ref=e436]:
+        - button [ref=e437]:
+          - img [ref=e438]
+        - generic [ref=e440]: ExitEsc
+    - generic [ref=e442]:
+      - generic [ref=e443]:
+        - generic [ref=e444]:
+          - link [ref=e445] [cursor=pointer]:
+            - /url: https://agentation.com
+            - img [ref=e446]
+          - paragraph [ref=e448]: v3.0.2
+          - button "Switch to light mode" [ref=e449]:
+            - img [ref=e452]
+        - generic [ref=e458]:
+          - generic [ref=e459]:
+            - generic [ref=e460]:
+              - text: Output Detail
+              - img [ref=e462]
+            - button "Standard" [ref=e466]: Standard
+          - generic [ref=e467]:
+            - generic [ref=e468]:
+              - text: React Components
+              - img [ref=e470]
+            - checkbox [checked] [ref=e475]
+          - generic [ref=e476]:
+            - generic [ref=e477]:
+              - text: Hide Until Restart
+              - img [ref=e479]
+            - checkbox [ref=e484]
+        - generic [ref=e485]:
+          - generic [ref=e486]: Marker Color
+          - generic [ref=e487]:
+            - button "Indigo"
+            - button "Blue"
+            - button "Cyan"
+            - button "Green"
+            - button "Yellow"
+            - button "Orange"
+            - button "Red"
+        - generic [ref=e488]:
+          - generic [ref=e489]:
+            - generic [ref=e490]:
+              - checkbox "Clear on copy/send" [ref=e491]
+              - img [ref=e492]
+            - text: Clear on copy/send
+            - img [ref=e495]
+          - generic [ref=e499]:
+            - generic [ref=e500]:
+              - checkbox "Block page interactions" [checked] [ref=e501]
+              - img [ref=e502]
+            - text: Block page interactions
+        - button "Manage MCP & Webhooks" [ref=e504]:
+          - text: Manage MCP & Webhooks
+          - img [ref=e506]
+      - generic [ref=e508]:
+        - button "Manage MCP & Webhooks" [ref=e509]:
+          - img [ref=e510]
+          - text: Manage MCP & Webhooks
+        - generic [ref=e512]:
+          - generic [ref=e514]:
+            - text: MCP Connection
+            - img [ref=e516]
+          - paragraph [ref=e520]:
+            - text: MCP connection allows agents to receive and act on annotations.
+            - link "Learn more" [ref=e521] [cursor=pointer]:
+              - /url: https://agentation.dev/mcp
+        - generic [ref=e522]:
+          - generic [ref=e523]:
+            - generic [ref=e524]:
+              - text: Webhooks
+              - img [ref=e526]
+            - generic [ref=e530]:
+              - text: Auto-Send
+              - checkbox "Auto-Send" [checked] [disabled] [ref=e532]
+          - paragraph [ref=e533]: The webhook URL will receive live annotation changes and annotation data.
+          - textbox "Webhook URL" [ref=e534]

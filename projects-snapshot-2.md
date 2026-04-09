@@ -1,0 +1,94 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Sebastian.Almonacid" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: Sebastian.Almonacid
+        - navigation [ref=e8]:
+          - generic [ref=e9]
+          - button "Ver CV Completo" [ref=e14]
+    - main [ref=e17]:
+      - link "Volver atrás" [ref=e19] [cursor=pointer]:
+        - /url: /
+        - img [ref=e20]
+        - text: Volver atrás
+      - generic [ref=e23]:
+        - link "MIO WEB MIO WEB 01.2026" [ref=e24] [cursor=pointer]:
+          - /url: /proyectos/mio-web
+          - img "MIO WEB" [ref=e26]
+          - generic [ref=e27]
+        - link "Fletes Marcelo Fletes Marcelo 05.2025" [ref=e30] [cursor=pointer]:
+          - /url: https://fletesdonmarcelo.netlify.app/
+          - img "Fletes Marcelo" [ref=e32]
+          - generic [ref=e33]
+        - link "Portafolio Web Portafolio Web 10.2025" [ref=e36] [cursor=pointer]:
+          - /url: https://portafolio-taupe-one-74.vercel.app/
+          - img "Portafolio Web" [ref=e38]
+          - generic [ref=e39]
+        - link "AGR E-Commerce AGR E-Commerce 08.2025" [ref=e42] [cursor=pointer]:
+          - /url: https://proyecto-e-commerce-swart.vercel.app/
+          - img "AGR E-Commerce" [ref=e44]
+          - generic [ref=e45]
+    - contentinfo [ref=e48]:
+      - generic [ref=e49]:
+        - link "GitHub" [ref=e50] [cursor=pointer]:
+          - /url: https://github.com/Sebastiaaann
+        - link "LinkedIn" [ref=e51] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/sebastian-almonacid-santana-63b980264/
+        - link "Email" [ref=e52] [cursor=pointer]:
+          - /url: mailto:sebastian.almo9@gmail.com
+  - generic [ref=e55]:
+    - button "Menu" [ref=e56]:
+      - img [ref=e58]
+      - generic: Menu
+    - button "Inspect" [ref=e62]:
+      - img [ref=e64]
+      - generic: Inspect
+    - button "Audit" [ref=e66]:
+      - generic [ref=e67]:
+        - img [ref=e68]
+        - img [ref=e71]
+      - generic: Audit
+    - button "Settings" [ref=e74]:
+      - img [ref=e76]
+      - generic: Settings
+  - button "v3.0.2 Output Detail Standard React Components Hide Until Restart Marker Color Clear on copy/send Block page interactions Manage MCP & Webhooks Manage MCP & Webhooks MCP Connection MCP connection allows agents to receive and act on annotations. Learn more Webhooks Auto-Send The webhook URL will receive live annotation changes and annotation data." [ref=e80] [cursor=pointer]:
+    - img [ref=e82]
+    - generic:
+      - generic:
+        - button:
+          - img
+      - generic:
+        - button:
+          - img
+      - generic:
+        - button [disabled]:
+          - img
+      - generic:
+        - button [disabled]:
+          - img
+      - generic:
+        - button [disabled]:
+          - img
+      - generic:
+        - button [disabled]:
+          - img
+      - generic:
+        - button:
+          - img
+      - generic:
+        - button:
+          - img
+    - generic:
+      - generic:
+        - generic:
+          - generic
+          - generic
+          - generic
+          - generic
+          - button "Manage MCP & Webhooks"
+        - generic:
+          - button "Manage MCP & Webhooks"
+          - generic
+          - generic

@@ -1,8 +1,11 @@
 ---
+import { Signature } from './ui/signature';
 ---
-<footer class="w-full max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row gap-4 justify-between items-center text-sm text-zinc-500 border-t border-zinc-100 mt-20">
-  <div class="text-center sm:text-left">Built with &lt;3 by me</div>
-  <div class="flex flex-wrap justify-center gap-6 font-medium text-zinc-700">
+<footer class="w-full max-w-5xl mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-sm text-zinc-500 border-t border-zinc-100 mt-10">
+  <div class="flex justify-center md:justify-start">
+    <Signature text="Sebastian" className="w-24 h-auto" client:visible />
+  </div>
+  <div class="flex flex-wrap justify-center md:justify-end gap-6 font-medium text-zinc-700">
     <a href="https://github.com/Sebastiaaann" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 transition-colors">GitHub</a>
     <a href="https://www.linkedin.com/in/sebastian-almonacid-santana-63b980264/" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
     <a href="mailto:sebastian.almo9@gmail.com" class="hover:text-zinc-900 transition-colors">Email</a>

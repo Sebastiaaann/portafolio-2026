@@ -31,7 +31,7 @@ export const projectsData: Project[] = [
     image: "/MIO-LP.png",
     layout: "image-left",
     date: "01.2026",
-    techStack: ["React", "TypeScript", "TailwindCSS"],
+    techStack: ["Vue 3", "TypeScript", "TailwindCSS"],
     link: "https://mioweb.com",
     github: "https://github.com/example/mioweb",
     caseStudy: {

@@ -1,10 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectsGrid from '../components/ProjectsGrid.astro';
+import BackButton from '../components/BackButton.astro';
 ---
 
 <Layout title="Proyectos - Sebastian Almonacid" description="Proyectos que he construido a lo largo de mi carrera.">
-  <main class="min-h-screen bg-transparent pt-12 pb-24">
+  <main transition:name="route-main" class="min-h-screen bg-transparent pt-12 pb-24">
+    <section class="mb-8 w-full max-w-[1879px] mx-auto px-6 lg:px-20">
+      <BackButton />
+    </section>
     <ProjectsGrid />
   </main>
 </Layout>

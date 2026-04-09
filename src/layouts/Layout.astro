@@ -13,6 +13,7 @@ import '../index.css';
 import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Agentation } from 'agentation';
 ---
 
 <!doctype html>
@@ -27,10 +28,13 @@ import Footer from '../components/Footer.astro';
 		<title>{title}</title>
 	</head>
 	<body class="min-h-screen bg-black text-zinc-900 font-sans selection:bg-zinc-200 selection:text-zinc-900 antialiased">
-		<div vaul-drawer-wrapper class="min-h-screen bg-white bg-dot-pattern flex flex-col relative transition-transform duration-500">
-			<Header transition:persist />
-			<slot />
+		<div vaul-drawer-wrapper class="relative flex min-h-screen flex-col bg-white bg-dot-pattern transition-transform duration-500">
+			<Header />
+			<div class="relative flex flex-1 flex-col">
+				<slot />
+			</div>
 			<Footer />
 		</div>
+		{import.meta.env.DEV && <Agentation client:only="react" />}
 	</body>
 </html>

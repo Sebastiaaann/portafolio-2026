@@ -2,81 +2,44 @@
 import { projectsData } from "../data/projects";
 ---
 
-<section class="w-full max-w-5xl mx-auto px-6 py-12 lg:px-8 lg:py-20 font-sans">
-  <div class="mb-12 animate-fade-in-up">
-    <h1 class="font-serif text-4xl md:text-5xl font-medium text-zinc-900 tracking-tight">
-      Proyectos
-    </h1>
-    <p class="font-sans text-zinc-600 mt-3 text-lg max-w-2xl text-pretty leading-relaxed">
-      Proyectos que he construido en el camino, guiados por la curiosidad y el enfoque en crear cosas que realmente funcionen.
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    {projectsData.map((project, index) => (
+<section class="w-full max-w-[1879px] mx-auto px-6 lg:px-20 font-sans">
+  <div class="columns-1 md:columns-2 lg:columns-3 gap-4">
+    {projectsData.map((project) => (
       <a
         href={project.caseStudy ? `/proyectos/${project.slug}` : project.link}
+        data-astro-prefetch={project.caseStudy ? true : undefined}
         target={!project.caseStudy ? "_blank" : undefined}
         rel={!project.caseStudy ? "noopener noreferrer" : undefined}
-        class="group flex flex-col bg-white border border-dashed border-zinc-300 rounded-2xl overflow-hidden hover:border-zinc-400 transition-colors cursor-pointer animate-fade-in-up"
-        style={`animation-delay: ${index * 100}ms; animation-fill-mode: both;`}
+        class="group mb-4 flex break-inside-avoid flex-col overflow-hidden rounded-[14px] border border-zinc-200 bg-zinc-50 transition-colors hover:border-zinc-300"
       >
-        {/* Image */}
-        <div class="w-full aspect-video bg-zinc-100/50 overflow-hidden border-b border-dashed border-zinc-200">
+        {/* Image - takes up main space */}
+        <div class="w-full overflow-hidden bg-zinc-100">
           {project.image ? (
             <img 
               src={project.image} 
               alt={project.title} 
-              class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
-              style={`view-transition-name: project-image-${project.slug}`}
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+              transition:name={`project-image-${project.slug}`}
               loading="lazy"
             />
           ) : (
-            <div class="w-full h-full bg-zinc-100" />
+            <div class="w-full aspect-video bg-zinc-100" />
           )}
         </div>
 
-        {/* Content */}
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex justify-between items-start gap-4">
-            <h3 
-              class="font-serif text-xl font-medium text-zinc-900 leading-tight"
-              style={`view-transition-name: project-title-${project.slug}`}
-            >
-              {project.title}
-            </h3>
-            {project.date && (
-              <span class="font-mono text-sm text-zinc-500 tabular-nums shrink-0 mt-1">
-                {project.date}
-              </span>
-            )}
-          </div>
-
-          <p class="font-sans text-sm text-zinc-600 text-pretty mt-3 leading-relaxed flex-1">
-            {project.description}
-          </p>
-
-          {/* Tech Stack */}
-          {project.techStack && project.techStack.length > 0 && (
-            <div class="flex flex-wrap gap-2 mt-5">
-              {project.techStack.map(tech => (
-                <span class="border border-zinc-200 text-zinc-500 font-mono text-[11px] px-2 py-0.5 rounded-md">
-                  {tech}
-                </span>
-              ))}
-            </div>
+        {/* Minimal Footer */}
+        <div class="px-4 py-3 flex justify-between items-center bg-zinc-50 border-t border-zinc-100">
+          <h3 
+            class="font-sans text-sm font-medium text-zinc-900 leading-none"
+            transition:name={`project-title-${project.slug}`}
+          >
+            {project.title}
+          </h3>
+          {project.date && (
+            <span class="font-sans text-xs text-zinc-500 tabular-nums">
+              {project.date}
+            </span>
           )}
-
-          {/* Footer Links */}
-          <div class="border-t border-dashed border-zinc-200 mt-6 pt-4 flex justify-between items-center text-sm">
-            <span class="inline-block py-3 px-3 -my-3 -mx-3 font-mono text-[11px] uppercase tracking-wider text-zinc-500 hover:text-zinc-900 active:scale-[0.96] will-change-transform transition-transform">
-              Ver sitio
-            </span>
-            <div class="w-[1px] h-3 bg-zinc-200"></div>
-            <span class="inline-block py-3 px-3 -my-3 -mx-3 font-mono text-[11px] uppercase tracking-wider text-zinc-500 hover:text-zinc-900 active:scale-[0.96] will-change-transform transition-transform">
-              GitHub
-            </span>
-          </div>
         </div>
       </a>
     ))}

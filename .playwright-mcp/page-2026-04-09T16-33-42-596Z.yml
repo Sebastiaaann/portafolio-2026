@@ -1,0 +1,183 @@
+- generic [active] [ref=e320]:
+  - generic [ref=e321]:
+    - banner [ref=e322]:
+      - generic [ref=e323]:
+        - link "Sebastian.Almonacid" [ref=e325] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e326]: Sebastian.Almonacid
+        - navigation [ref=e327]:
+          - generic [ref=e328]:
+            - link "Inicio" [ref=e329] [cursor=pointer]:
+              - /url: /
+            - link "Proyectos" [ref=e330] [cursor=pointer]:
+              - /url: /proyectos
+          - button "Ver CV Completo" [ref=e333]:
+            - generic [ref=e334]: Ver CV Completo
+    - main [ref=e336]:
+      - generic [ref=e341]:
+        - generic [ref=e342]:
+          - img "Sebastian Almonacid" [ref=e344]
+          - generic [ref=e345]:
+            - heading "Sebastian Almonacid" [level=1] [ref=e346]
+            - paragraph [ref=e347]: Frontend Developer
+        - generic [ref=e349]:
+          - generic [ref=e350]:
+            - generic [ref=e351]: Sebastian, Frontend Developer
+            - img [ref=e353]
+          - generic [ref=e356]:
+            - generic [ref=e357]: Soy un Ingeniero en Informática y desarrollador Frontend, con foco en interfaces escalables, arquitectura de componentes y experiencia de usuario.
+            - generic [ref=e358]:
+              - text: Me desenvuelvo entre diseño y desarrollo, integrando criterio visual y ejecución técnica para construir
+              - generic [ref=e359]:
+                - img [ref=e360]
+                - text: soluciones mantenibles
+              - text: y centradas en el usuario.
+          - generic [ref=e366]:
+            - link "Send Message" [ref=e367] [cursor=pointer]:
+              - /url: mailto:sebastian.almo9@gmail.com
+              - img [ref=e368]
+              - generic [ref=e370]: Send Message
+            - button "Copy email address" [ref=e372] [cursor=pointer]:
+              - generic [ref=e373]:
+                - generic [ref=e374]:
+                  - img
+                - generic [ref=e375]:
+                  - img
+              - generic [ref=e376]: Copiar
+            - link [ref=e377] [cursor=pointer]:
+              - /url: https://github.com/Sebastiaaann
+              - img [ref=e378]
+            - link [ref=e381] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/sebastian-almonacid-santana-63b980264/
+              - img [ref=e382]
+    - contentinfo [ref=e386]:
+      - generic [ref=e387]:
+        - link "GitHub" [ref=e388] [cursor=pointer]:
+          - /url: https://github.com/Sebastiaaann
+        - link "LinkedIn" [ref=e389] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/sebastian-almonacid-santana-63b980264/
+        - link "Email" [ref=e390] [cursor=pointer]:
+          - /url: mailto:sebastian.almo9@gmail.com
+  - generic [ref=e74]:
+    - button "Menu" [ref=e75]:
+      - img [ref=e77]
+      - generic: Menu
+    - button "Inspect" [ref=e81]:
+      - img [ref=e83]
+      - generic: Inspect
+    - button "Audit" [ref=e85]:
+      - generic [ref=e86]:
+        - img [ref=e87]
+        - img [ref=e391]
+      - generic: Audit
+    - button "Settings" [ref=e93]:
+      - img [ref=e95]
+      - generic: Settings
+  - generic [ref=e393]: Portafolio 2026 - Sebastian Almonacid
+  - button "Pause animationsP Layout modeL Hide markersH Copy feedbackC Send AnnotationsS Clear allX Settings ExitEsc v3.0.2 Output Detail Standard React Components Hide Until Restart Marker Color Indigo Blue Cyan Green Yellow Orange Red Clear on copy/send Block page interactions Manage MCP & Webhooks Manage MCP & Webhooks MCP Connection MCP connection allows agents to receive and act on annotations. Learn more Webhooks Auto-Send The webhook URL will receive live annotation changes and annotation data." [ref=e396]:
+    - img [ref=e398]
+    - generic [ref=e401]:
+      - generic [ref=e402]:
+        - button [ref=e403]:
+          - img [ref=e404]
+        - generic [ref=e407]: Pause animationsP
+      - generic [ref=e408]:
+        - button [ref=e409]:
+          - img [ref=e410]
+        - generic [ref=e412]: Layout modeL
+      - generic [ref=e413]:
+        - button [disabled] [ref=e414]:
+          - img [ref=e415]
+        - generic [ref=e422]: Hide markersH
+      - generic [ref=e423]:
+        - button [disabled] [ref=e424]:
+          - img [ref=e425]
+        - generic [ref=e432]: Copy feedbackC
+      - generic [ref=e433]:
+        - button [disabled] [ref=e434]:
+          - img [ref=e435]
+        - generic [ref=e444]: Send AnnotationsS
+      - generic [ref=e445]:
+        - button [disabled] [ref=e446]:
+          - img [ref=e447]
+        - generic [ref=e449]: Clear allX
+      - generic [ref=e450]:
+        - button [ref=e451]:
+          - img [ref=e452]
+        - text: Settings
+      - generic [ref=e455]:
+        - button [ref=e456]:
+          - img [ref=e457]
+        - generic [ref=e459]: ExitEsc
+    - generic [ref=e461]:
+      - generic [ref=e462]:
+        - generic [ref=e463]:
+          - link [ref=e464] [cursor=pointer]:
+            - /url: https://agentation.com
+            - img [ref=e465]
+          - paragraph [ref=e467]: v3.0.2
+          - button "Switch to light mode" [ref=e468]:
+            - img [ref=e471]
+        - generic [ref=e477]:
+          - generic [ref=e478]:
+            - generic [ref=e479]:
+              - text: Output Detail
+              - img [ref=e481]
+            - button "Standard" [ref=e485]: Standard
+          - generic [ref=e486]:
+            - generic [ref=e487]:
+              - text: React Components
+              - img [ref=e489]
+            - checkbox [checked] [ref=e494]
+          - generic [ref=e495]:
+            - generic [ref=e496]:
+              - text: Hide Until Restart
+              - img [ref=e498]
+            - checkbox [ref=e503]
+        - generic [ref=e504]:
+          - generic [ref=e505]: Marker Color
+          - generic [ref=e506]:
+            - button "Indigo"
+            - button "Blue"
+            - button "Cyan"
+            - button "Green"
+            - button "Yellow"
+            - button "Orange"
+            - button "Red"
+        - generic [ref=e507]:
+          - generic [ref=e508]:
+            - generic [ref=e509]:
+              - checkbox "Clear on copy/send" [ref=e510]
+              - img [ref=e511]
+            - text: Clear on copy/send
+            - img [ref=e514]
+          - generic [ref=e518]:
+            - generic [ref=e519]:
+              - checkbox "Block page interactions" [checked] [ref=e520]
+              - img [ref=e521]
+            - text: Block page interactions
+        - button "Manage MCP & Webhooks" [ref=e523]:
+          - text: Manage MCP & Webhooks
+          - img [ref=e525]
+      - generic [ref=e527]:
+        - button "Manage MCP & Webhooks" [ref=e528]:
+          - img [ref=e529]
+          - text: Manage MCP & Webhooks
+        - generic [ref=e531]:
+          - generic [ref=e533]:
+            - text: MCP Connection
+            - img [ref=e535]
+          - paragraph [ref=e539]:
+            - text: MCP connection allows agents to receive and act on annotations.
+            - link "Learn more" [ref=e540] [cursor=pointer]:
+              - /url: https://agentation.dev/mcp
+        - generic [ref=e541]:
+          - generic [ref=e542]:
+            - generic [ref=e543]:
+              - text: Webhooks
+              - img [ref=e545]
+            - generic [ref=e549]:
+              - text: Auto-Send
+              - checkbox "Auto-Send" [checked] [disabled] [ref=e551]
+          - paragraph [ref=e552]: The webhook URL will receive live annotation changes and annotation data.
+          - textbox "Webhook URL" [ref=e553]

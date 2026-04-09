@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Code2, ChevronDown, GraduationCap } from 'lucide-react';
 
 export default function ExperienceItem({ company, role, meta, dates, description, tech, iconType }: any) {
@@ -45,15 +44,15 @@ export default function ExperienceItem({ company, role, meta, dates, description
         </button>
 
         {description && (
-          <motion.div 
-            initial={false}
-            animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-            className="overflow-hidden ml-9"
+          <div 
+            className={`grid transition-[grid-template-rows] duration-300 ease-out ml-9 ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
           >
-            <p className="text-base text-zinc-700 leading-relaxed pt-2 pb-2 text-pretty">
-              {description}
-            </p>
-          </motion.div>
+            <div className="overflow-hidden">
+              <p className="text-base text-zinc-700 leading-relaxed pt-2 pb-2 text-pretty">
+                {description}
+              </p>
+            </div>
+          </div>
         )}
 
         {tech && tech.length > 0 && (

@@ -1,0 +1,73 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Sebastian.Almonacid" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: Sebastian.Almonacid
+        - navigation [ref=e8]:
+          - generic [ref=e9]:
+            - link "Inicio" [ref=e10] [cursor=pointer]:
+              - /url: /
+            - link "Proyectos" [ref=e11] [cursor=pointer]:
+              - /url: /proyectos
+          - button "Ver CV Completo" [ref=e14]:
+            - generic [ref=e15]: Ver CV Completo
+    - main [ref=e17]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - img "Sebastian Almonacid" [ref=e25]
+          - generic [ref=e26]:
+            - heading "Sebastian Almonacid" [level=1] [ref=e27]
+            - paragraph [ref=e28]: Frontend Developer
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]: Sebastian, Frontend Developer
+            - img [ref=e34]
+          - generic [ref=e37]:
+            - generic [ref=e38]: Soy un Ingeniero en Informática y desarrollador Frontend, con foco en interfaces escalables, arquitectura de componentes y experiencia de usuario.
+            - generic [ref=e39]:
+              - text: Me desenvuelvo entre diseño y desarrollo, integrando criterio visual y ejecución técnica para construir
+              - generic [ref=e40]:
+                - img [ref=e41]
+                - text: soluciones mantenibles
+              - text: y centradas en el usuario.
+          - generic [ref=e47]:
+            - link "Send Message" [ref=e48] [cursor=pointer]:
+              - /url: mailto:sebastian.almo9@gmail.com
+              - img [ref=e49]
+              - generic [ref=e51]: Send Message
+            - button "Copy email address" [ref=e53] [cursor=pointer]:
+              - generic [ref=e54]:
+                - generic [ref=e55]:
+                  - img
+                - generic [ref=e56]:
+                  - img
+              - generic [ref=e57]: Copiar
+            - link [ref=e58] [cursor=pointer]:
+              - /url: https://github.com/Sebastiaaann
+              - img [ref=e59]
+            - link [ref=e62] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/sebastian-almonacid-santana-63b980264/
+              - img [ref=e63]
+    - contentinfo [ref=e67]:
+      - generic [ref=e68]:
+        - link "GitHub" [ref=e69] [cursor=pointer]:
+          - /url: https://github.com/Sebastiaaann
+        - link "LinkedIn" [ref=e70] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/sebastian-almonacid-santana-63b980264/
+        - link "Email" [ref=e71] [cursor=pointer]:
+          - /url: mailto:sebastian.almo9@gmail.com
+  - generic [ref=e74]:
+    - button "Menu" [ref=e75]:
+      - img [ref=e77]
+      - generic: Menu
+    - button "Inspect" [ref=e81]:
+      - img [ref=e83]
+      - generic: Inspect
+    - button "Audit" [ref=e85]:
+      - img [ref=e87]
+      - generic: Audit
+    - button "Settings" [ref=e90]:
+      - img [ref=e92]
+      - generic: Settings

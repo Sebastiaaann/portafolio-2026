@@ -1,0 +1,20 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - checkbox "Use dark theme" [ref=e6]
+    - generic [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+      - img [ref=e12]
+      - generic [ref=e16]: Use dark theme
+  - banner [ref=e17]:
+    - generic [ref=e18]:
+      - heading "TypeError" [level=2] [ref=e19]
+      - heading "An error occurred." [level=1] [ref=e20]
+    - img [ref=e23]
+  - generic [ref=e27]:
+    - img [ref=e29]
+    - generic [ref=e31]: Cannot read properties of undefined (reading 'call')
+  - generic [ref=e32]:
+    - generic [ref=e33]:
+      - heading "Stack Trace" [level=2] [ref=e34]
+      - img [ref=e36] [cursor=pointer]
+    - generic [ref=e40]: "TypeError: Cannot read properties of undefined (reading 'call') at EnvironmentPluginContainer.transform (file:///D:/proyectos/Portafolio%202026/node_modules/astro/node_modules/vite/dist/node/chunks/config.js:28800:51) at async loadAndTransform (file:///D:/proyectos/Portafolio%202026/node_modules/astro/node_modules/vite/dist/node/chunks/config.js:22670:26)"

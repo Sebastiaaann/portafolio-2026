@@ -1,0 +1,207 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Sebastian.Almonacid" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: Sebastian.Almonacid
+        - navigation [ref=e8]:
+          - generic [ref=e9]:
+            - link "Inicio" [ref=e10] [cursor=pointer]:
+              - /url: /
+            - link "Proyectos" [ref=e11] [cursor=pointer]:
+              - /url: /proyectos
+          - button "Ver CV Completo" [ref=e14]:
+            - generic [ref=e15]: Ver CV Completo
+    - article [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Frontend Development
+        - heading "MIO WEB" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Mio Web se mueve rápido. Los requerimientos pueden ajustarse y hay poco margen para la inconsistencia. Sin una estructura sólida, entregar interfaces de alta calidad a ese ritmo se vuelve riesgoso. Como líder frontend, construí el sistema de diseño para darle al proyecto una base firme bajo presión y agilizar la creación de nuevas vistas sin perder coherencia.
+        - generic [ref=e21]:
+          - generic [ref=e22]: Vue 3
+          - generic [ref=e23]: TypeScript
+          - generic [ref=e24]: TailwindCSS
+        - generic [ref=e25]:
+          - link "Visitar Proyecto" [ref=e26] [cursor=pointer]:
+            - /url: https://mioweb.com
+            - text: Visitar Proyecto
+          - link "Código Fuente" [ref=e28] [cursor=pointer]:
+            - /url: https://github.com/example/mioweb
+            - generic [ref=e29]: Código Fuente
+            - img [ref=e30]
+      - img "Portada de MIO WEB" [ref=e34]
+      - generic [ref=e35]:
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - 'heading "Dashboard: El corazón de los datos." [level=2] [ref=e41]'
+            - paragraph [ref=e42]: Aplicando el sistema de diseño, creamos un panel de métricas críticas. Tarjetas modulares y gráficos simples que permiten al paciente ver su progreso histórico, reduciendo la carga cognitiva y facilitando decisiones de salud.
+          - 'img "Captura de Dashboard: El corazón de los datos." [ref=e46]'
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - heading "Layout y Sistema de Grillas." [level=2] [ref=e52]
+            - paragraph [ref=e53]: Definimos una estructura sólida para vistas complejas, como la autenticación. Separar la pantalla en áreas lógicas (una columna de branding oscura y una de acción clara con gradientes) asegura que el usuario no se pierda al iniciar sesión o completar su perfil médico.
+          - generic [ref=e56]:
+            - img "Captura de Layout y Sistema de Grillas."
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - 'heading "Fundamentos: Tipografía y Color." [level=2] [ref=e62]'
+            - paragraph [ref=e63]: La base visual de MIO. Plus Jakarta Sans aporta carácter y legibilidad en los títulos (Display y Heading), mientras que Inter actúa como la columna vertebral para la lectura de datos médicos complejos. La paleta, centrada en tonos violetas vibrantes contrastados con fondos oscuros, define jerarquías claras sin ser abrumadora.
+          - generic [ref=e66]:
+            - 'img "Captura de Fundamentos: Tipografía y Color."'
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - heading "Métricas y Tarjetas Modulares." [level=2] [ref=e72]
+            - paragraph [ref=e73]: Desglosamos la información clínica en componentes independientes y visuales. El diseño atómico permite componer distintas vistas del dashboard sin repetir lógica ni estilos, garantizando jerarquía clara para métricas vitales, gráficos de evolución y títulos de sección en toda la plataforma.
+          - generic [ref=e76]:
+            - img "Captura de componente de MIO WEB 1" [ref=e77]
+            - img "Captura de componente de MIO WEB 2" [ref=e78]
+            - img "Captura de componente de MIO WEB 3" [ref=e79]
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - heading "Construido para el trabajo real." [level=2] [ref=e85]
+            - paragraph [ref=e86]: Me enfoqué en los componentes que realmente íbamos a reutilizar. Las variaciones en botones y estados fueron intencionales y limitadas para evitar la sobrecarga de opciones. Las convenciones de nombres se mantuvieron simples y predecibles para que cualquier desarrollador pudiera usarlas sin fricción.
+          - generic [ref=e89]:
+            - img "Captura de Construido para el trabajo real."
+        - generic [ref=e93]:
+          - heading "Diseñado para ser compartido." [level=2] [ref=e95]
+          - paragraph [ref=e96]: En un entorno dinámico, el valor del sistema se volvió obvio. Redujo el tiempo de diseño, mejoró la consistencia y facilitó el desarrollo de nuevas secciones. En lugar de repensar decisiones o dudar sobre qué variante usar, el sistema creó una línea base compartida que mantuvo a toda la interfaz alineada.
+      - link "Volver al Inicio" [ref=e99] [cursor=pointer]:
+        - /url: /#proyectos
+        - img [ref=e101]
+        - generic [ref=e103]: Volver al Inicio
+    - contentinfo [ref=e104]:
+      - generic [ref=e105]:
+        - link "GitHub" [ref=e106] [cursor=pointer]:
+          - /url: https://github.com/Sebastiaaann
+        - link "LinkedIn" [ref=e107] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/sebastian-almonacid-santana-63b980264/
+        - link "Email" [ref=e108] [cursor=pointer]:
+          - /url: mailto:sebastian.almo9@gmail.com
+  - generic [ref=e111]:
+    - button "Menu" [ref=e112]:
+      - img [ref=e114]
+      - generic: Menu
+    - button "Inspect" [ref=e118]:
+      - img [ref=e120]
+      - generic: Inspect
+    - button "Audit" [ref=e122]:
+      - img [ref=e124]
+      - generic: Audit
+    - button "Settings" [ref=e127]:
+      - img [ref=e129]
+      - generic: Settings
+  - button "v3.0.2 Output Detail Standard React Components Hide Until Restart Marker Color Clear on copy/send Block page interactions Manage MCP & Webhooks Manage MCP & Webhooks MCP Connection MCP connection allows agents to receive and act on annotations. Learn more Webhooks Auto-Send The webhook URL will receive live annotation changes and annotation data." [ref=e133] [cursor=pointer]:
+    - img [ref=e135]
+    - generic:
+      - generic:
+        - button:
+          - img
+      - generic:
+        - button:
+          - img
+      - generic:
+        - button [disabled]:
+          - img
+      - generic:
+        - button [disabled]:
+          - img
+      - generic:
+        - button [disabled]:
+          - img
+      - generic:
+        - button [disabled]:
+          - img
+      - generic:
+        - button:
+          - img
+      - generic:
+        - button:
+          - img
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - link:
+              - /url: https://agentation.com
+              - img
+            - paragraph: v3.0.2
+            - button "Switch to light mode":
+              - generic:
+                - generic:
+                  - img
+          - generic:
+            - generic:
+              - generic:
+                - text: Output Detail
+                - generic:
+                  - img
+              - button "Standard":
+                - generic: Standard
+            - generic:
+              - generic:
+                - text: React Components
+                - generic:
+                  - img
+              - generic:
+                - checkbox [checked]
+            - generic:
+              - generic:
+                - text: Hide Until Restart
+                - generic:
+                  - img
+              - generic:
+                - checkbox
+          - generic:
+            - generic: Marker Color
+            - generic:
+              - button "Indigo"
+              - button "Blue"
+              - button "Cyan"
+              - button "Green"
+              - button "Yellow"
+              - button "Orange"
+              - button "Red"
+          - generic:
+            - generic:
+              - generic:
+                - checkbox "Clear on copy/send"
+                - img
+              - generic: Clear on copy/send
+              - generic:
+                - img
+            - generic:
+              - generic:
+                - checkbox "Block page interactions" [checked]
+                - img
+              - generic: Block page interactions
+          - button "Manage MCP & Webhooks":
+            - generic: Manage MCP & Webhooks
+            - generic:
+              - img
+        - generic:
+          - button "Manage MCP & Webhooks":
+            - img
+            - generic: Manage MCP & Webhooks
+          - generic:
+            - generic:
+              - generic:
+                - text: MCP Connection
+                - generic:
+                  - img
+            - paragraph:
+              - text: MCP connection allows agents to receive and act on annotations.
+              - link "Learn more":
+                - /url: https://agentation.dev/mcp
+          - generic:
+            - generic:
+              - generic:
+                - text: Webhooks
+                - generic:
+                  - img
+              - generic:
+                - generic: Auto-Send
+                - generic:
+                  - checkbox "Auto-Send" [checked] [disabled]
+            - paragraph: The webhook URL will receive live annotation changes and annotation data.
+            - textbox "Webhook URL"
