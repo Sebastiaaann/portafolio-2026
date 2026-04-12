@@ -27,7 +27,7 @@ const { project } = Astro.props;
       
       <h1 
         class="font-serif text-5xl md:text-8xl font-medium tracking-tight mb-8 text-balance leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150"
-        style={`view-transition-name: project-title-${project.slug}`}
+        transition:name={`project-title-${project.slug}`}
       >
         {project.title}
       </h1>
@@ -84,7 +84,7 @@ const { project } = Astro.props;
           src={project.image} 
           alt={`Portada de ${project.title}`}
           class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-          style={`view-transition-name: project-image-${project.slug}`}
+          transition:name={`project-image-${project.slug}`}
         />
         {/* Glass Overlay Effect */}
         <div class="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/20 rounded-[40px]" />

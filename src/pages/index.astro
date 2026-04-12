@@ -1,10 +1,63 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
+import BioSlide from '../components/BioSlide.astro';
 ---
 
 <Layout>
-  <main>
-    <Hero />
+  <main transition:name="route-main" class="w-full">
+    <div class="slides-wrapper relative z-10 w-full bg-transparent">
+      <BioSlide />
+    </div>
   </main>
 </Layout>
+
+<style is:global>
+  .slides-wrapper { 
+    margin-top: 64px; 
+  }
+  .section { 
+    width: 100%; 
+    min-height: calc(100vh - 64px);
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    box-sizing: border-box; 
+    background: transparent; 
+    overflow: hidden; 
+  }
+  .section-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .section-inner { 
+    height: 100%; 
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+  }
+  #hero-section {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  #hero-section .section-content {
+    justify-content: flex-start;
+    padding-top: clamp(1rem, 5vh, 3.5rem);
+  }
+  #hero-section .section-inner {
+    height: auto;
+    overflow: visible;
+  }
+  .section-2 .section-inner,
+  .section-3 .section-inner { 
+    height: auto; 
+    padding-bottom: 20vh; 
+    padding-top: 10vh;
+  }
+</style>

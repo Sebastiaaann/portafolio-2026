@@ -1,0 +1,41 @@
+---
+import ExperienceItem from './react/ExperienceItem';
+---
+
+<section class="section slide section-3">
+  <div class="section-content w-full h-full flex flex-col items-center justify-center">
+    <div class="section-inner w-full flex flex-col items-center">
+      <div class="w-full max-w-2xl px-6 flex flex-col gap-12 text-left h-full">
+        <div>
+          <h2 class="font-serif text-3xl font-bold text-zinc-900 border-b border-zinc-200 pb-4 mb-8 mt-4 text-balance">Educación</h2>
+          <div class="flex flex-col gap-8">
+            <ExperienceItem
+              client:visible
+              company="Instituto Profesional INACAP"
+              role="Ingeniero en Informática"
+              meta="Título Profesional"
+              dates="2024 - 2025"
+              iconType="education"
+            />
+            <ExperienceItem
+              client:visible
+              company="Instituto Profesional INACAP"
+              role="Técnico de Nivel Superior Analista Programador"
+              meta="Título Técnico"
+              dates="2022 - 2023"
+              iconType="education"
+            />
+            <ExperienceItem
+              client:visible
+              company="Certificaciones INACAP"
+              role="Desarrollador Full Stack & Diseño y Gestión de Base de Datos"
+              meta="Certificaciones"
+              dates="2025"
+              iconType="education"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
