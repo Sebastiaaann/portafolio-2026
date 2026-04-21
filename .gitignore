@@ -5,6 +5,7 @@ coverage/
 .astro/
 .codex/
 .continue/
+.vercel/
 .DS_Store
 *.log
 .env*

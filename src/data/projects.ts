@@ -3,6 +3,7 @@ export interface CaseStudySection {
   description?: string;
   image?: string;
   images?: string[];
+  type: 'hero' | 'tech' | 'showcase';
 }
 
 export interface Project {
@@ -31,7 +32,7 @@ export const projectsData: Project[] = [
     image: "/MIO-LP.png",
     layout: "image-left",
     date: "01.2026",
-    techStack: ["React", "TypeScript", "TailwindCSS"],
+    techStack: ["Vue 3", "TypeScript", "TailwindCSS"],
     link: "https://mioweb.com",
     github: "https://github.com/example/mioweb",
     caseStudy: {
@@ -40,17 +41,20 @@ export const projectsData: Project[] = [
         {
           title: "Dashboard: El corazón de los datos.",
           description: "Aplicando el sistema de diseño, creamos un panel de métricas críticas. Tarjetas modulares y gráficos simples que permiten al paciente ver su progreso histórico, reduciendo la carga cognitiva y facilitando decisiones de salud.",
-          image: "/MIO-IMG1.png"
+          image: "/MIO-IMG1.png",
+          type: 'showcase'
         },
         {
           title: "Layout y Sistema de Grillas.",
           description: "Definimos una estructura sólida para vistas complejas, como la autenticación. Separar la pantalla en áreas lógicas (una columna de branding oscura y una de acción clara con gradientes) asegura que el usuario no se pierda al iniciar sesión o completar su perfil médico.",
-          image: "/EstructuraFrame.webp"
+          image: "/EstructuraFrame.webp",
+          type: 'showcase'
         },
         {
           title: "Fundamentos: Tipografía y Color.",
           description: "La base visual de MIO. Plus Jakarta Sans aporta carácter y legibilidad en los títulos (Display y Heading), mientras que Inter actúa como la columna vertebral para la lectura de datos médicos complejos. La paleta, centrada en tonos violetas vibrantes contrastados con fondos oscuros, define jerarquías claras sin ser abrumadora.",
-          image: "/ComponentFrame.webp"
+          image: "/ComponentFrame.webp",
+          type: 'showcase'
         },
         {
           title: "Métricas y Tarjetas Modulares.",
@@ -59,16 +63,19 @@ export const projectsData: Project[] = [
             "/C-dash1.webp",
             "/C-dashH4.webp",
             "/C-dash3.webp"
-          ]
+          ],
+          type: 'showcase'
         },
         {
           title: "Construido para el trabajo real.",
           description: "Me enfoqué en los componentes que realmente íbamos a reutilizar. Las variaciones en botones y estados fueron intencionales y limitadas para evitar la sobrecarga de opciones. Las convenciones de nombres se mantuvieron simples y predecibles para que cualquier desarrollador pudiera usarlas sin fricción.",
-          image: "/componetsUI.png"
+          image: "/componetsUI.png",
+          type: 'showcase'
         },
         {
           title: "Diseñado para ser compartido.",
-          description: "En un entorno dinámico, el valor del sistema se volvió obvio. Redujo el tiempo de diseño, mejoró la consistencia y facilitó el desarrollo de nuevas secciones. En lugar de repensar decisiones o dudar sobre qué variante usar, el sistema creó una línea base compartida que mantuvo a toda la interfaz alineada."
+          description: "En un entorno dinámico, el valor del sistema se volvió obvio. Redujo el tiempo de diseño, mejoró la consistencia y facilitó el desarrollo de nuevas secciones. En lugar de repensar decisiones o dudar sobre qué variante usar, el sistema creó una línea base compartida que mantuvo a toda la interfaz alineada.",
+          type: 'tech'
         }
       ]
     }
@@ -108,5 +115,58 @@ export const projectsData: Project[] = [
     techStack: ["Next.js", "Prisma", "PostgreSQL"],
     link: "https://proyecto-e-commerce-swart.vercel.app/",
     github: "https://github.com/example/agr"
+  },
+  {
+    slug: "notichilec",
+    category: "Mobile Application",
+    title: "NotiChile©",
+    description: "Aplicación móvil para el seguimiento de licitaciones públicas de Mercado Público (Chile). Permite a los proveedores encontrar oportunidades como Adquisición de equipos computacionales y Servicio de mantención.",
+    image: "/images/projects/NotichileC/Mockup-APP-Notichle.webp",
+    layout: "text-left",
+    date: "04.2026",
+    techStack: ["React Native", "Expo", "PostgreSQL", "Express"],
+    caseStudy: {
+      intro: "NotiChile© revoluciona el acceso a licitaciones públicas de Mercado Público. Centraliza oportunidades clave como la Adquisición de equipos computacionales y Servicio de mantención, permitiendo a los proveedores recibir notificaciones push en tiempo real y gestionar sus postulaciones directamente desde su dispositivo móvil.",
+      sections: [
+        {
+          title: "Construyendo el MVP",
+          description: "Del problema a la primera versión. En semanas. Sin perder calidad.",
+          type: 'hero'
+        },
+        {
+          title: "Frontend: React Native + Expo",
+          description: "UI nativa con React Native y Expo. Componentes modulares, navegación fluida, y una base de código que escala sin fricción. TypeScript en cada archivo — tipo safety desde el día uno.",
+          type: 'tech'
+        },
+        {
+          title: "Backend: Express + PostgreSQL",
+          description: "API REST con Express. PostgreSQL para datos estructurados: licitaciones, usuarios, alertas. Consultas optimizadas, respuesta en milisegundos.",
+          type: 'tech'
+        },
+        {
+          title: "Notificaciones Push en Tiempo Real",
+          description: "WebSockets para comunicación bidireccional. El backend detecta nuevas licitaciones y empuja la alerta al dispositivo — sin polling, sin delay.",
+          type: 'tech'
+        },
+        {
+          title: "View Licitaciones",
+          description: "Filtros instantáneos. Lista que respira. Solo lo esencial: qué, cuánto, cuándo.",
+          image: "/images/projects/NotichileC/ui-licitaciones-Notichile-MVP.webp",
+          type: 'showcase'
+        },
+        {
+          title: "Settings",
+          description: "Detalle limpio. Comprador, monto, fechas. Un CTA directo a Mercado Público.",
+          image: "/images/projects/NotichileC/ui-settings-Notichilec.webp",
+          type: 'showcase'
+        },
+        {
+          title: "Home",
+          description: "Sincronización confirmada. Alertas activas. El usuario sabe que está conectado.",
+          image: "/images/projects/NotichileC/ui-feed-Notichilec.webp",
+          type: 'showcase'
+        }
+      ]
+    }
   }
 ];
