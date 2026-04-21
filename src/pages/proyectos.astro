@@ -5,10 +5,48 @@ import BackButton from '../components/BackButton.astro';
 ---
 
 <Layout title="Proyectos - Sebastian Almonacid" description="Proyectos que he construido a lo largo de mi carrera.">
-  <main transition:name="route-main" class="min-h-screen bg-transparent pt-12 pb-24">
-    <section class="mb-8 w-full max-w-[1879px] mx-auto px-6 lg:px-20">
-      <BackButton />
-    </section>
-    <ProjectsGrid />
+  <main transition:name="route-main" class="min-h-screen bg-transparent relative">
+    {/* Atmospheric background texture */}
+    <div class="fixed inset-0 pointer-events-none z-0" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 400 400%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E'); opacity: 0.025;"></div>
+    
+    {/* Subtle vertical grid lines — editorial feel */}
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.03]">
+      <div class="absolute inset-y-0 left-[20%] w-[1px] bg-zinc-900"></div>
+      <div class="absolute inset-y-0 left-[50%] w-[1px] bg-zinc-900"></div>
+      <div class="absolute inset-y-0 left-[80%] w-[1px] bg-zinc-900"></div>
+    </div>
+
+    <div class="relative z-10">
+      {/* Editorial Header Section */}
+      <section class="pt-16 pb-12 md:pt-24 md:pb-16 px-6 lg:px-20 max-w-[1879px] mx-auto">
+        <div class="mb-6">
+          <BackButton />
+        </div>
+        
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            {/* Small label */}
+            <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-3">
+              Selected Work
+            </p>
+            
+            {/* Main title — large, editorial */}
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-zinc-900 tracking-tight leading-[0.9] text-balance">
+              Proyectos
+            </h1>
+          </div>
+          
+          {/* Right side — count + description */}
+          <div class="md:text-right max-w-xs">
+            <div class="w-8 h-[1px] bg-zinc-300 mb-4 md:ml-auto"></div>
+            <p class="text-sm text-zinc-500 leading-relaxed text-pretty">
+              Una selección de trabajos en desarrollo web, diseño de productos y desarrollo móvil.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <ProjectsGrid />
+    </div>
   </main>
 </Layout>

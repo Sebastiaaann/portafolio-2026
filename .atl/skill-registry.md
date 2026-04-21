@@ -1,64 +1,79 @@
 # Skill Registry
 
-**Orchestrator use only.** Read this registry once per session to resolve skill paths, then pass pre-resolved paths directly to each sub-agent's launch prompt. Sub-agents receive the path and load the skill directly — they do NOT read this registry.
+**Delegator use only.** Any agent that launches sub-agents reads this registry to resolve compact rules, then injects them directly into sub-agent prompts. Sub-agents do NOT read this registry or individual SKILL.md files.
+
+See `_shared/skill-resolver.md` for the full resolution protocol.
 
 ## User Skills
 
 | Trigger | Skill | Path |
 |---------|-------|------|
-| Manual load | "doc" | C:/Users/elwax/.Codex/skills/doc/SKILL.md |
-| Manual load | "gh-fix-ci" | C:/Users/elwax/.Codex/skills/gh-fix-ci/SKILL.md |
-| When writing Go tests, using teatest, or adding test coverage. | go-testing | C:/Users/elwax/.copilot/skills/go-testing/SKILL.md |
-| Manual load | "pdf" | C:/Users/elwax/.Codex/skills/pdf/SKILL.md |
-| Manual load | "playwright" | C:/Users/elwax/.Codex/skills/playwright/SKILL.md |
-| Manual load | "playwright-interactive" | C:/Users/elwax/.Codex/skills/playwright-interactive/SKILL.md |
-| Manual load | "screenshot" | C:/Users/elwax/.Codex/skills/screenshot/SKILL.md |
-| Manual load | "security-best-practices" | C:/Users/elwax/.Codex/skills/security-best-practices/SKILL.md |
-| When user asks to create a new skill, add agent instructions, or document patterns for AI. | skill-creator | C:/Users/elwax/.copilot/skills/skill-creator/SKILL.md |
-| Manual load | brainstorming | C:/Users/elwax/.config/opencode/skills/brainstorming/SKILL.md |
-| Manual load | dispatching-parallel-agents | C:/Users/elwax/.config/opencode/skills/dispatching-parallel-agents/SKILL.md |
-| Manual load | executing-plans | C:/Users/elwax/.config/opencode/skills/executing-plans/SKILL.md |
-| Manual load | finishing-a-development-branch | C:/Users/elwax/.config/opencode/skills/finishing-a-development-branch/SKILL.md |
-| Manual load | receiving-code-review | C:/Users/elwax/.config/opencode/skills/receiving-code-review/SKILL.md |
-| Manual load | requesting-code-review | C:/Users/elwax/.config/opencode/skills/requesting-code-review/SKILL.md |
-| Manual load | subagent-driven-development | C:/Users/elwax/.config/opencode/skills/subagent-driven-development/SKILL.md |
-| Manual load | systematic-debugging | C:/Users/elwax/.config/opencode/skills/systematic-debugging/SKILL.md |
-| Manual load | test-driven-development | C:/Users/elwax/.config/opencode/skills/test-driven-development/SKILL.md |
-| Manual load | using-git-worktrees | C:/Users/elwax/.config/opencode/skills/using-git-worktrees/SKILL.md |
-| Manual load | using-superpowers | C:/Users/elwax/.config/opencode/skills/using-superpowers/SKILL.md |
-| Manual load | verification-before-completion | C:/Users/elwax/.config/opencode/skills/verification-before-completion/SKILL.md |
-| Manual load | writing-plans | C:/Users/elwax/.config/opencode/skills/writing-plans/SKILL.md |
-| Manual load | writing-skills | C:/Users/elwax/.config/opencode/skills/writing-skills/SKILL.md |
-| Manual load | ui-skills | C:/Users/elwax/.cursor/skills/ui-skills/SKILL.md |
-| Manual load | building-native-ui | C:/Users/elwax/.agents/skills/building-native-ui/SKILL.md |
-| Manual load | deploy-to-vercel | C:/Users/elwax/.agents/skills/deploy-to-vercel/SKILL.md |
-| Manual load | find-skills | C:/Users/elwax/.agents/skills/find-skills/SKILL.md |
-| Manual load | ios-design-guidelines | C:/Users/elwax/.agents/skills/ios-design-guidelines/SKILL.md |
-| Manual load | mercadopago-integration | C:/Users/elwax/.agents/skills/mercadopago-integration/SKILL.md |
-| Manual load | mobile-ios-design | C:/Users/elwax/.agents/skills/mobile-ios-design/SKILL.md |
-| Manual load | postgres | C:/Users/elwax/.agents/skills/postgres/SKILL.md |
-| Manual load | react-native | C:/Users/elwax/.agents/skills/react-native/SKILL.md |
-| Manual load | react-native-testing | C:/Users/elwax/.agents/skills/react-native-testing/SKILL.md |
-| Manual load | web-scraping | C:/Users/elwax/.agents/skills/web-scraping/SKILL.md |
-| Manual load | accessibility | D:/proyectos/Portafolio 2026/.agents/skills/accessibility/SKILL.md |
-| Manual load | astro | D:/proyectos/Portafolio 2026/.agents/skills/astro/SKILL.md |
-| When building Astro UI, using view transitions, hydrating components, or styling static pages. | astro-ui-patterns | D:/proyectos/Portafolio 2026/.agents/skills/astro-ui-patterns/SKILL.md |
-| Manual load | emil-design-eng | D:/proyectos/Portafolio 2026/.agents/skills/emil-design-eng/SKILL.md |
-| Manual load | frontend-design | D:/proyectos/Portafolio 2026/.agents/skills/frontend-design/SKILL.md |
-| Manual load | make-interfaces-feel-better | D:/proyectos/Portafolio 2026/.agents/skills/make-interfaces-feel-better/SKILL.md |
-| Manual load | nodejs-backend-patterns | D:/proyectos/Portafolio 2026/.agents/skills/nodejs-backend-patterns/SKILL.md |
-| Manual load | nodejs-best-practices | D:/proyectos/Portafolio 2026/.agents/skills/nodejs-best-practices/SKILL.md |
-| Manual load | nodejs-express-server | D:/proyectos/Portafolio 2026/.agents/skills/nodejs-express-server/SKILL.md |
-| Manual load | seo | D:/proyectos/Portafolio 2026/.agents/skills/seo/SKILL.md |
-| Manual load | shadcn | D:/proyectos/Portafolio 2026/.agents/skills/shadcn/SKILL.md |
-| Manual load | tailwind-css-patterns | D:/proyectos/Portafolio 2026/.agents/skills/tailwind-css-patterns/SKILL.md |
-| Manual load | tailwind-v4-shadcn | D:/proyectos/Portafolio 2026/.agents/skills/tailwind-v4-shadcn/SKILL.md |
-| Manual load | typescript-advanced-types | D:/proyectos/Portafolio 2026/.agents/skills/typescript-advanced-types/SKILL.md |
-| When the user asks to implement Vaul, drawer animations, aware animations, or scale background in Vaul. | vaul-aware-animations | D:/proyectos/Portafolio 2026/.agents/skills/vaul-aware-animations/SKILL.md |
-| When implementing, styling, or debugging a Vaul drawer component, or when asked to polish a drawer interface. | vaul-drawer-polish | D:/proyectos/Portafolio 2026/.agents/skills/vaul-drawer-polish/SKILL.md |
-| Manual load | vercel-composition-patterns | D:/proyectos/Portafolio 2026/.agents/skills/vercel-composition-patterns/SKILL.md |
+| Before any creative work - creating features, building components, adding functionality | brainstorming | C:\Users\elwax\.config\opencode\skills\brainstorming\SKILL.md |
+| Creating a pull request, opening a PR, preparing changes for review | branch-pr | C:\Users\elwax\.config\opencode\skills\branch-pr\SKILL.md |
+| Writing Go tests, using teatest, adding test coverage | go-testing | C:\Users\elwax\.config\opencode\skills\go-testing\SKILL.md |
+| Creating a GitHub issue, reporting a bug, requesting a feature | issue-creation | C:\Users\elwax\.config\opencode\skills\issue-creation\SKILL.md |
+| "judgment day", "judgment-day", "review adversarial", "dual review", "doble review", "juzgar" | judgment-day | C:\Users\elwax\.config\opencode\skills\judgment-day\SKILL.md |
+| Creating a new skill, adding agent instructions, documenting patterns | skill-creator | C:\Users\elwax\.config\opencode\skills\skill-creator\SKILL.md |
+| Any bug, test failure, unexpected behavior | systematic-debugging | C:\Users\elwax\.config\opencode\skills\systematic-debugging\SKILL.md |
+| Implementing any feature or bugfix, before writing implementation code | test-driven-development | C:\Users\elwax\.config\opencode\skills\test-driven-development\SKILL.md |
+
+## Compact Rules
+
+### brainstorming
+- MUST be used BEFORE any creative work — creating features, building components, adding functionality, modifying behavior
+- Ask clarifying questions ONE AT A TIME — understand purpose/constraints/success criteria
+- Propose 2-3 approaches with trade-offs and recommendation
+- Present design in sections scaled to complexity, get user approval after each section
+- HARD GATE: Do NOT invoke implementation skill, write code, scaffold, or take any implementation action until design is presented and user approved
+- "Simple" projects still need design — can be brief but MUST present and get approval
+
+### branch-pr
+- Every PR MUST link an approved issue — no exceptions
+- Every PR MUST have exactly one `type:*` label
+- Automated checks must pass before merge
+- Blank PRs without issue linkage are blocked by GitHub Actions
+
+### go-testing
+- Use table-driven tests as standard Go pattern
+- Test Bubbletea TUI components with teatest
+- Golden file testing for complex outputs
+- Always test state transitions in TUI components
+
+### issue-creation
+- Blank issues are disabled — MUST use template (bug report or feature request)
+- Every issue gets `status:needs-review` automatically
+- Maintainer MUST add `status:approved` before PR can be opened
+- Questions go to Discussions, not issues
+
+### judgment-day
+- Launch TWO independent blind judge sub-agents simultaneously for same target
+- Synthesize findings from both judges, apply fixes, re-judge until both pass
+- Escalate after 2 iterations if still failing
+- Follow Skill Resolver Protocol before launching judges
+- Resolve skill registry: mem_search → .atl/skill-registry.md fallback
+
+### skill-creator
+- Create skill when pattern repeats, AI needs guidance, complex workflows need steps
+- Don't create skill when documentation exists, pattern is trivial, or one-off task
+- Follow Agent Skills spec for structure: frontmatter, when-to-use, critical patterns, rules
+- Place in user-level skills directory for global, project-level for workspace-specific
+
+### systematic-debugging
+- NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST — iron law
+- Phase 1 (Root Cause) MUST complete before Phase 2 (Fix)
+- Symptom fixes are failure — they mask underlying issues
+- Random fixes waste time and create new bugs
+- Always reproduce issue first, understand why it happens, then fix
+
+### test-driven-development
+- Write the test FIRST, watch it fail, write minimal code to pass
+- If you didn't watch the test fail, you don't know if it tests the right thing
+- Always use for: new features, bug fixes, refactoring, behavior changes
+- Exceptions only with human partner approval: throwaway prototypes, generated code, config files
+- Violating the letter of the rules is violating the spirit of the rules
 
 ## Project Conventions
 
 | File | Path | Notes |
 |------|------|-------|
+| — | — | No project-level convention files found |

@@ -1,0 +1,126 @@
+---
+import type { Project } from '../data/projects';
+import CaseStudySection from './CaseStudySection.astro';
+import ExternalLink from './ExternalLink.astro';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const caseStudy = project.caseStudy ?? {
+  intro: project.description,
+  sections: [],
+};
+---
+
+<article
+  class="w-full font-sans text-zinc-900 pb-32 selection:bg-zinc-900 selection:text-white"
+  style="background-color: var(--color-article-bg)"
+  transition:name={`article-${project.slug}`}
+>
+  {/* Dynamic Background Texture */}
+  <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+  {/* Header: Category badge + title */}
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pt-24 md:pt-32 pb-8">
+  <span class="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-500 tracking-wide uppercase">
+    {project.category}
+  </span>
+  <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-900 tracking-tight leading-[0.95] text-balance mt-4">
+    {project.title}
+  </h1>
+</div>
+
+<!-- Intro paragraph -->
+<div class="relative z-10 max-w-4xl mx-auto px-6 pb-8">
+  <p class="text-lg md:text-xl text-zinc-500 leading-relaxed text-pretty">
+    {caseStudy.intro}
+  </p>
+</div>
+
+<!-- Tech stack badges -->
+{project.techStack && (
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pb-8">
+    <div class="flex flex-wrap gap-2">
+      {project.techStack.map((tech, i) => (
+        <span
+          class="inline-flex items-center rounded-full bg-zinc-50 px-3 py-1.5 text-sm font-medium text-zinc-700 border border-zinc-200/50 section-reveal"
+          style={`animation-delay: ${600 + i * 100}ms`}
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+)}
+
+<!-- CTA buttons -->
+{(project.link || project.github) && (
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pb-12 flex flex-col sm:flex-row gap-4">
+    {project.link && (
+      <ExternalLink href={project.link}>
+        <span class="inline-flex items-center justify-center h-10 px-6 rounded-full border border-zinc-200 bg-zinc-900 text-white text-sm font-medium transition-colors hover:bg-zinc-800 active:scale-[0.96]">
+          Visitar Proyecto
+        </span>
+      </ExternalLink>
+    )}
+    {project.github && (
+      <ExternalLink href={project.github}>
+        <span class="inline-flex items-center justify-center h-10 px-6 rounded-full border border-zinc-200 bg-white text-zinc-900 text-sm font-medium transition-colors hover:bg-zinc-50 active:scale-[0.96]">
+          Codigo Fuente
+        </span>
+      </ExternalLink>
+    )}
+  </div>
+)}
+
+<!-- Hero image -->
+{project.image && (
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pb-16 md:pb-24 group">
+    <img
+      src={project.image}
+      alt={project.title}
+      class="w-full h-auto object-cover rounded-2xl md:rounded-3xl shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
+      width="1200"
+      height="750"
+      fetchpriority="high"
+      loading="eager"
+      transition:name={`project-image-${project.slug}`}
+    />
+  </div>
+)}
+
+<!-- Sections loop -->
+<div class="relative z-10 flex flex-col gap-24 md:gap-32">
+  {caseStudy.sections.map((section, index) => (
+    <CaseStudySection
+      section={section}
+      projectTitle={project.title}
+      index={index}
+    />
+  ))}
+</div>
+
+<!-- Back to projects link -->
+<div class="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-24">
+  <a
+    href="/proyectos"
+    data-astro-prefetch
+    class="group inline-flex h-10 items-center gap-2 text-zinc-500 hover:text-zinc-900 transition-colors font-mono text-xs uppercase tracking-[0.15em]"
+  >
+    <svg
+      class="w-4 h-4 transition-transform group-hover:-translate-x-0.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a Proyectos
+  </a>
+</div>
+</article>

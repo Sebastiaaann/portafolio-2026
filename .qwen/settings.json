@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__engram__mem_save",
+      "Bash(npx *)",
+      "mcp__engram__mem_session_summary"
+    ]
+  },
+  "$version": 3
+}

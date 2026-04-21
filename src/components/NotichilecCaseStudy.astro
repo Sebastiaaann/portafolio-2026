@@ -1,0 +1,180 @@
+---
+import type { Project } from '../data/projects';
+import ExternalLink from './ExternalLink.astro';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const caseStudy = project.caseStudy ?? {
+  intro: project.description,
+  sections: [],
+};
+
+// Separate section types
+const heroSection = caseStudy.sections.find(s => s.type === 'hero');
+const techSections = caseStudy.sections.filter(s => s.type === 'tech');
+const showcaseSections = caseStudy.sections.filter(s => s.type === 'showcase');
+---
+
+<article
+  class="w-full pb-32 selection:bg-zinc-900 selection:text-white"
+  style="background-color: var(--color-article-bg)"
+  transition:name={`article-${project.slug}`}
+>
+  {/* Subtle noise texture */}
+  <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+  {/* ==================== HEADER ==================== */}
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pt-24 md:pt-32 pb-8">
+    <h1 class="font-display text-5xl md:text-7xl font-semibold text-zinc-900 tracking-tight leading-[0.9] text-balance">
+      {project.title}
+    </h1>
+  </div>
+
+  {/* Intro */}
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pb-8">
+    <p class="text-lg md:text-xl text-zinc-500 leading-relaxed text-pretty">
+      {caseStudy.intro}
+    </p>
+  </div>
+
+  {/* ==================== HERO IMAGE ==================== */}
+  {project.image && (
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-16 md:pb-24">
+      <div class="editorial-image">
+        <img
+          src={project.image}
+          alt={project.title}
+          class="w-full h-auto object-cover"
+          width="1040"
+          height="2080"
+          fetchpriority="high"
+          loading="eager"
+          transition:name={`project-image-${project.slug}`}
+        />
+      </div>
+    </div>
+  )}
+
+  {/* ==================== HERO SECTION (if exists) ==================== */}
+  {heroSection && (
+    <div class="relative z-10 max-w-2xl mx-auto text-center py-16 md:py-24 px-6 case-reveal" style="animation-delay: 400ms">
+      <div class="w-8 h-[1px] bg-zinc-200 mx-auto mb-6" />
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-zinc-900 tracking-tight text-balance mb-4">
+        {heroSection.title}
+      </h2>
+      {heroSection.description && (
+        <p class="text-lg text-zinc-500 leading-relaxed text-pretty">
+          {heroSection.description}
+        </p>
+      )}
+    </div>
+  )}
+
+  {/* ==================== TECH SECTIONS ==================== */}
+  {techSections.length > 0 && (
+    <div class="relative z-10 max-w-4xl mx-auto px-6 pb-16 flex flex-col gap-16">
+      {techSections.map((section, index) => (
+        <div
+          class="case-reveal"
+          style={`animation-delay: ${500 + index * 100}ms`}
+        >
+          <div class="flex items-start gap-4">
+            <span class="font-sans text-xs text-zinc-300 tabular-nums pt-1 shrink-0">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <div class="flex-1">
+              {section.title && (
+                <h2 class="font-display text-2xl font-semibold text-zinc-900 tracking-tight mb-2">
+                  {section.title}
+                </h2>
+              )}
+              {section.description && (
+                <p class="text-base text-zinc-500 leading-relaxed text-pretty">
+                  {section.description}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {/* Decorative divider */}
+  {showcaseSections.length > 0 && (
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-12">
+      <div class="w-8 h-[1px] bg-zinc-200 mx-auto" />
+    </div>
+  )}
+
+  {/* ==================== SHOWCASE SECTIONS ==================== */}
+  {showcaseSections.length > 0 && (
+    <div class="relative z-10 flex flex-col gap-20 md:gap-28">
+      {showcaseSections.map((section, index) => (
+        <div
+          class="case-reveal"
+          style={`animation-delay: ${700 + index * 120}ms`}
+        >
+          <div class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 md:gap-20 max-w-6xl mx-auto px-6 items-start`}>
+            {/* Content Side */}
+            <div class="md:w-[40%]">
+              {section.title && (
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-zinc-900 tracking-tight text-balance mb-3">
+                  {section.title}
+                </h2>
+              )}
+              {section.description && (
+                <p class="text-base text-zinc-500 leading-relaxed text-pretty">
+                  {section.description}
+                </p>
+              )}
+            </div>
+
+            {/* Image Side — Large & Clean */}
+            {section.image && (
+              <div class="md:w-[60%]">
+                <div class="editorial-image">
+                  <img
+                    src={section.image}
+                    alt={section.title || project.title}
+                    class="w-full h-auto object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width="1040"
+                    height="2080"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {/* ==================== BACK TO PROJECTS ==================== */}
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-24">
+    <div class="w-8 h-[1px] bg-zinc-200 mx-auto mb-8" />
+    <a
+      href="/proyectos"
+      data-astro-prefetch
+      class="group inline-flex h-10 items-center gap-2 text-zinc-500 hover:text-zinc-900 transition-colors font-sans text-xs uppercase tracking-[0.15em]"
+    >
+      <svg
+        class="w-4 h-4 transition-transform group-hover:-translate-x-0.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Volver a Proyectos
+    </a>
+  </div>
+</article>
